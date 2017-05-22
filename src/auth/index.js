@@ -7,7 +7,6 @@ export default {
   },
   login (context, creds, redirect) {
     let url = API_URL + '/sessions/create'
-
     context.$http.post(url, creds)
       .then((res) => {
         localStorage.setItem('id_token', res.data.id_token)
@@ -16,6 +15,7 @@ export default {
         console.log(localStorage);
         if (redirect) {
           context.$router.push({name: 'user'})
+          console.log(creds.username)
         }
       })
       .catch((err) => {

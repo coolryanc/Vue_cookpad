@@ -1,18 +1,12 @@
 <template lang="pug">
 .container
   .navContain
-    .userName Hi
+    .userName Hii!
     .btnSignOut(@click='getbackLogin') SIGN OUT
   .dropzoneContain
-    dropzone#myVueDropzone(url="http://localhost:3001")
-    droply(id="myDroply" ref="droplyOne"
-                        url="http://localhost:3001"
-                        upload-message-text="Drop file(s) to upload <br><strong>or click</strong>"
-                        @droply-file-added="onFileAdded"
-                        @droply-removed-file="onFileRemoved"
-                        @droply-success="onSuccess")
+    dropzone#myVueDropzone(url="http://localhost:3001/upload" :maxNumberOfFiles='numOfFile')
+    //- Droply#myDroply( ref="droplyOne" url="http://localhost:3001/upload")
   .imgContain
-  button(v-if="showRemoveAllButton" @click="removeAll()") REMOVE
 </template>
 
 <script>
@@ -24,8 +18,9 @@ import Droply from 'droply'
 export default {
   data () {
       return {
-        processQueue: false,
-        showRemoveAllButton: false
+        isclick: false,
+        numOfFile: 20,
+        name: ''
       }
     },
   methods: {
@@ -35,12 +30,6 @@ export default {
     },
     'showSuccess': function (file) {
         console.log('A file was successfully uploaded')
-    },
-    onFileAdded() {
-        this.showRemoveAllButton = true
-    },
-    onFileRemoved() {
-      this.showRemoveAllButton = false
     },
     onSuccess(file) {
       console.log('A file was successfully uploaded')
@@ -54,6 +43,7 @@ export default {
     Droply
   }
 }
+
 </script>
 
 <style lang="sass" scoped>

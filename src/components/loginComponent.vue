@@ -26,12 +26,11 @@ export default {
     }
   },
   components: {
-    UserInput
+    UserInput,
+    user
   },
   methods: {
-    ff () {
-      console.log('test click');
-    },
+
     submit() {
 
       var credentials = {
@@ -40,7 +39,6 @@ export default {
       }
       console.log(credentials)
       auth.login(this, credentials, 'user')
-
     }
   }
 }
