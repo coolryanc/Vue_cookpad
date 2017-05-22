@@ -2,7 +2,7 @@
 
 > Cookpad Programming Assignment: Web
 
-## Vue_cookpad
+## Build with
 * Front-end: Vue project
 * Using  [node-jwt](https://github.com/auth0-blog/nodejs-jwt-authentication-sample) for authentication
 
@@ -26,3 +26,4 @@ node server/server.js
 npm run dev
 
 ```
+![](photo/1.png)
