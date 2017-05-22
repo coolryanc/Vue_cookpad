@@ -1,22 +1,26 @@
-# yes
+# Hello, Cookpad
 
 > Cookpad Programming Assignment: Web
 
 ## Build Setup
 
 ``` bash
-# install dependencies
+cd server
+
+# install server dependencies
 npm install
+
+cd ..
+
+# install vue project dependencies
+npm install
+
+# start the server
+node server/server.js
 
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 # Vue_cookpad
