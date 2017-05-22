@@ -2,6 +2,10 @@
 
 > Cookpad Programming Assignment: Web
 
+## Vue_cookpad
+* Front-end: Vue project
+* [node-jwt](https://github.com/auth0-blog/nodejs-jwt-authentication-sample) for authentication
+
 ## Build Setup
 
 ``` bash
@@ -22,5 +26,3 @@ node server/server.js
 npm run dev
 
 ```
-
-# Vue_cookpad
