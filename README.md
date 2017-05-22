@@ -4,7 +4,7 @@
 
 ## Vue_cookpad
 * Front-end: Vue project
-* [node-jwt](https://github.com/auth0-blog/nodejs-jwt-authentication-sample) for authentication
+* Using  [node-jwt](https://github.com/auth0-blog/nodejs-jwt-authentication-sample) for authentication
 
 ## Build Setup
 
