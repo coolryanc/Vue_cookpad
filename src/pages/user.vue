@@ -1,7 +1,8 @@
 <template lang="pug">
 .container
   .navContain
-    .userName Hii!
+    .userName Welcome,
+      span {{getUserName}}
     .btnSignOut(@click='getbackLogin') SIGN OUT
   .dropzoneContain
     dropzone#myVueDropzone(url="http://localhost:3001/upload" :maxNumberOfFiles='numOfFile')
@@ -20,9 +21,13 @@ export default {
       return {
         isclick: false,
         numOfFile: 20,
-        name: ''
       }
     },
+  computed: {
+    getUserName () {
+      return this.$parent.$data.userName
+    }
+  },
   methods: {
     getbackLogin () {
       auth.logout()
@@ -97,5 +102,9 @@ export default {
   cursor: pointer
   &:hover
     background-color: rgba(66,165,245,0.03)
+
+span
+  margin-left: 10px
+  font-weight: bold
 
 </style>

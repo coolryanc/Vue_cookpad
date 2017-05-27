@@ -1,6 +1,11 @@
-# Hello, Cookpad
+# **Hello, Cookpad**
+Cookpad Programming Assignment: Web
+![](http://i.imgur.com/jCV7bXR.png)
 
-> Cookpad Programming Assignment: Web
+### Demo
+* Demo Link: [hh]()
+* Deploy it on free Heroku Dyno, it may not work during sleeping. See: [Free Dyno Hours](https://devcenter.heroku.com/articles/free-dyno-hours)
+*  Screen is at the bottom of this README file.
 
 ## Build with
 * Front-end: Vue project
@@ -22,8 +27,19 @@ npm install
 # start the server
 node server/server.js
 
+# Open another terminal screen
+(command + T)
+
 # serve with hot reload at localhost:8080
 npm run dev
 
 ```
-![](photo/1.png)
+## Process
+* Error message
+![](http://i.imgur.com/5ts4COr.png)
+* Sign in successfully
+![](http://i.imgur.com/8S38jQt.png)
+* Upload image
+![](http://i.imgur.com/Wbrim0I.png)
+* Remove image
+![](http://i.imgur.com/RwFfC0j.png)

@@ -2,8 +2,8 @@
 .logcontainer
   .tab( @click.self="loginTab" v-bind:class="{ tabStop: !isLogin}") SIGN IN
   .tab( @click.self="signupTab" v-bind:class="{ tabStop: isLogin}") SIGN UP
-  loginComponent( v-if="isLogin" )
-  signupComponent( v-if="!isLogin" )
+  loginComponent( v-if="isLogin" v-on:getLogUserName = "getLogNameData()" ref="loginRef")
+  signupComponent( v-if="!isLogin" v-on:getSignNameData = "getSignNameData()" ref="signinRef")
 </template>
 
 <script>
@@ -16,12 +16,16 @@ import auth from '../auth'
 export default {
   data () {
     return {
-      tabVal: ['SIGN IN', 'SIGN UP'],
-      logPlaceholder: [{itemName: 'USERNAME', val: ''}, {itemName: 'PASSWORD', val:''}],
-      signPlaceholder: [{itemName: 'LOCATION', val: ''}, {itemName: 'EMAIL', val: ''}, {itemName: 'USERNAME', val: ''}, {itemName: 'PASSWORD', val: ''}],
-      isLogin: true
+      // tabVal: ['SIGN IN', 'SIGN UP'],
+      // logPlaceholder: [{itemName: 'USERNAME', val: ''}, {itemName: 'PASSWORD', val:''}],
+      // signPlaceholder: [{itemName: 'LOCATION', val: ''}, {itemName: 'EMAIL', val: ''}, {itemName: 'USERNAME', val: ''}, {itemName: 'PASSWORD', val: ''}],
+      isLogin: true,
+      name: ''
     }
   },
+  // props: {
+  //   name: ""
+  // },
   components: {
     UserInput,
     loginComponent,
@@ -33,6 +37,14 @@ export default {
     },
     signupTab () {
       this.isLogin = false
+    },
+    getLogNameData () {
+      this.name = this.$refs.loginRef.logPlaceholder[0].val;
+      this.$parent.$data.userName = this.name;
+    },
+    getSignNameData () {
+      this.name = this.$refs.signinRef.signPlaceholder[0].val;
+      this.$parent.$data.userName = this.name;
     }
   }
 }

@@ -4,7 +4,7 @@
     .logImg
     .logTitle Cookpad
   UserInput( :Placeholder="logPlaceholder" )
-  .logBtn(@click="submit()") SIGN IN
+  .logBtn SIGN IN
   .btnDetial
     input(type="checkbox")
     label Stay signed in
@@ -37,7 +37,7 @@ export default {
         username: this.logPlaceholder[0].val,
         password: this.logPlaceholder[1].val
       }
-      console.log(credentials)
+      this.$emit('getLogUserName')
       auth.login(this, credentials, 'user')
     }
   }

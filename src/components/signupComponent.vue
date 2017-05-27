@@ -32,6 +32,7 @@ export default {
         password: this.signPlaceholder[1].val
       }
       // console.log(credentials)
+      this.$emit('getSignNameData')
       auth.signup(this, credentials, 'user')
     }
   }
